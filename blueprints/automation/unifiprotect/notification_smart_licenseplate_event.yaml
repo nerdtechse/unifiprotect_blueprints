@@ -245,6 +245,12 @@ action:
                 # Android high prority
                 ttl: 0
                 priority: high
+                alert_once: |
+                  {% if tag != "" %}
+                    true
+                  {% else %}
+                    false
+                  {% endif %}
                 # iOS high prority
                 time-sensitive: 1
                 image: "{{ notification_image }}"
